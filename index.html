@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The List. — WAU WAU STUDIO</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Chapter 01 kommt. The List erfährt es zuerst — ein Haus für den Hund und den Menschen, der mit ihm wohnt.">
+<link rel="canonical" href="https://wauwaustudio.com/">
+<meta property="og:title" content="The List. — WAU WAU STUDIO">
+<meta property="og:description" content="Chapter 01 kommt. The List erfährt es zuerst — ein Haus für den Hund und den Menschen, der mit ihm wohnt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wauwaustudio.com/">
+<meta property="og:image" content="https://wauwaustudio.com/og-image.png">
+<meta property="og:site_name" content="WAU WAU Studio">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css?v=20260708-17">
+</head>
+<body>
+
+<main class="landing">
+  <div class="landing-inner">
+
+    <div class="landing-emblem" aria-hidden="true">
+      <svg viewBox="0 0 828.16 688.01" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M337.18,0.00 L277.61,135.22 L372.55,353.83 L291.80,530.65 L59.59,0.53 L0.00,136.64 L242.98,688.01 L383.33,378.32 L518.47,687.63 L828.16,9.86 L808.40,10.77 L567.93,530.61 Z"/>
+      </svg>
+    </div>
+
+    <h1 class="landing-line">The Human. The Dog. The Resident.</h1>
+
+    <!-- Brevo (Double-Opt-in, serverseitig aktiv). Der POST geht in ein
+         verstecktes iframe, damit die Nutzerin auf unserer Seite bleibt;
+         nach dem Absenden ersetzt JS das Formular durch die Erfolgszeile.
+         Ohne JS: normaler POST → Brevos Bestätigungsseite (Fallback). -->
+    <form id="waitlist-form" class="landing-form"
+          method="POST"
+          action="https://05bfba28.sibforms.com/serve/MUIFANes7wOMDW1x9LsXTZkSfi8IwycVIzQrdy02yQ5F_LmxSNYl-3UzJ2UgAMfsqFvCfhcM5OTgOtFvl_n9G4hEizqqS1yi-n6mCq2LnCVQKB_JZHeTov3mG00yAmByyrkmhdje-ytwQ4DkUl9AEQszVpSWIpnWPnQM_wQiMUCpGWv2mjA3inl9meaNAmDXZCrSvLcvhLGaMJ7lWQ=="
+          target="brevo-sink">
+      <input type="email" name="EMAIL" placeholder="E-Mail-Adresse" aria-label="E-Mail-Adresse" required>
+      <input type="text" name="email_address_check" value="" style="position:absolute;left:-9999px" tabindex="-1" aria-hidden="true">
+      <input type="hidden" name="locale" value="de">
+      <button type="submit">Enter the Resident.</button>
+    </form>
+    <p class="landing-fineprint">Du bekommst eine Bestätigungsmail. Abmelden geht jederzeit — <a href="landing-datenschutz.html">Der Datenschutz.</a></p>
+    <iframe name="brevo-sink" style="display:none" aria-hidden="true" title="Brevo"></iframe>
+
+  </div>
+
+  <footer class="landing-footer">
+    <div class="landing-legal">
+      <a href="landing-impressum.html">Das Impressum.</a>
+      <a href="landing-datenschutz.html">Der Datenschutz.</a>
+    </div>
+    <span>© 2026 WAU WAU Studio · Stuttgart</span>
+  </footer>
+</main>
+
+<script>
+  (function () {
+    var form = document.getElementById('waitlist-form');
+    if (!form) return;
+    var fineprint = document.querySelector('.landing-fineprint');
+    form.addEventListener('submit', function () {
+      // Das Formular postet wirklich (target = verstecktes iframe). Wir
+      // ersetzen danach nur die sichtbaren Elemente durch die Erfolgszeile.
+      setTimeout(function () {
+        var note = document.createElement('p');
+        note.className = 'landing-success';
+        note.textContent = 'Check über dein Postfach in The Resident. ein.';
+        form.replaceWith(note);
+        if (fineprint) fineprint.remove();
+      }, 0);
+    });
+  })();
+</script>
+
+</body>
+</html>
